@@ -22,6 +22,7 @@
         <!-- 注意，oneThread 是基于配置中心的基础组件，正常不应该有控制台，所以这个模块不应该应用到生产环境 -->
         <module>dashboard-dev</module>
         <module>starter/common-spring-boot-starter</module>
+        <module>starter/nacos-cloud-spring-boot-starter</module>
     </modules>
 
     <properties>
