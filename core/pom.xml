@@ -7,8 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>tidepool-core</artifactId>
+    <packaging>pom</packaging>
     <name>Archetype - tidepool-core</name>
     <url>http://maven.apache.org</url>
+
 
     <dependencies>
         <dependency>

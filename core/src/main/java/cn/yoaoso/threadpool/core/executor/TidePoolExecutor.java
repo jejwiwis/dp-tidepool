@@ -2,6 +2,7 @@ package cn.yoaoso.threadpool.core.executor;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,6 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * @create 2026-01-16 23:36
  */
 @Slf4j
+@Getter
 public class TidePoolExecutor extends ThreadPoolExecutor {
     /**
      * 线程池唯一标识，用来动态变更参数
