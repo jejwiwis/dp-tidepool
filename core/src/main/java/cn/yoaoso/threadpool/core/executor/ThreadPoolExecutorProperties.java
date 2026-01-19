@@ -57,4 +57,51 @@ public class ThreadPoolExecutorProperties {
      */
     private Boolean allowCoreThreadTimeOut;
 
+    /**
+     * 通知配置
+     */
+    private NotifyConfig notify;
+
+    /**
+     * 报警配置，默认设置
+     */
+    private AlarmConfig alarm = new AlarmConfig();
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class NotifyConfig {
+
+        /**
+         * 接收人集合
+         */
+        private String receives;
+
+        /**
+         * 告警间隔，单位分钟
+         */
+        private Integer interval = 5;
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class AlarmConfig {
+
+        /**
+         * 默认开启报警配配置
+         */
+        private Boolean enable = Boolean.TRUE;
+
+        /**
+         * 队列阈值
+         */
+        private Integer queueThreshold = 80;
+
+        /**
+         * 活跃线程阈值
+         */
+        private Integer activeThreshold = 80;
+    }
+
 }
