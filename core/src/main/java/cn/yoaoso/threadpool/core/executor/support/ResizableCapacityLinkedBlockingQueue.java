@@ -1,5 +1,3 @@
-
-
 package cn.yoaoso.threadpool.core.executor.support;
 
 import java.util.AbstractQueue;

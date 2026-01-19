@@ -39,19 +39,19 @@ public class NotifierDispatcher implements NotifierService {
 
     @Override
     public void sendAlarmMessage(ThreadPoolAlarmNotifyDTO alarm) {
-//        getNotifierService().ifPresent(service -> {
-//            // 频率检查
-//            boolean allowSend = AlarmRateLimiter.allowAlarm(
-//                    alarm.getThreadPoolId(),
-//                    alarm.getAlarmType(),
-//                    alarm.getInterval()
-//            );
-//
-//            // 满足频率发送告警
-//            if (allowSend) {
-//                service.sendAlarmMessage(alarm.resolve());
-//            }
-//        });
+        getNotifierService().ifPresent(service -> {
+            // 频率检查
+            boolean allowSend = AlarmRateLimiter.allowAlarm(
+                    alarm.getThreadPoolId(),
+                    alarm.getAlarmType(),
+                    alarm.getInterval()
+            );
+
+            // 满足频率发送告警
+            if (allowSend) {
+                service.sendAlarmMessage(alarm.resolve());
+            }
+        });
     }
 
     /**

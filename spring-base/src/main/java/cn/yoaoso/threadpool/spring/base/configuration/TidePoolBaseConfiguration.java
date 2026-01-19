@@ -1,6 +1,8 @@
 package cn.yoaoso.threadpool.spring.base.configuration;
 
+import cn.yoaoso.threadpool.core.alarm.ThreadPoolAlarmChecker;
 import cn.yoaoso.threadpool.core.config.BootstrapConfigProperties;
+import cn.yoaoso.threadpool.core.monitor.service.NotifierDispatcher;
 import cn.yoaoso.threadpool.spring.base.support.ApplicationContextHolder;
 import cn.yoaoso.threadpool.spring.base.support.TidePoolBeanPostProcessor;
 import org.springframework.context.annotation.Bean;
@@ -22,6 +24,12 @@ public class TidePoolBaseConfiguration {
     public TidePoolBeanPostProcessor tidePoolBeanPostProcessor(BootstrapConfigProperties properties) {
         return new TidePoolBeanPostProcessor(properties);
     }
+
+    @Bean(initMethod = "start", destroyMethod = "stop")
+    public ThreadPoolAlarmChecker threadPoolAlarmChecker(NotifierDispatcher notifierDispatcher) {
+        return new ThreadPoolAlarmChecker(notifierDispatcher);
+    }
+
 
 
 }
