@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.bind.Bindable;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import cn.yoaoso.threadpool.core.config.BootstrapConfigProperties;
 import org.springframework.core.env.Environment;
@@ -31,8 +32,5 @@ public class CommonAutoConfiguration {
                 .get();
         return bootstrapConfigProperties;
     }
-
-
-
 
 }
