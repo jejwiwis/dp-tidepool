@@ -11,5 +11,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(MarkerConfiguration.class)
-public @interface EnableOneThread {
+public @interface EnableTidePool {
 }

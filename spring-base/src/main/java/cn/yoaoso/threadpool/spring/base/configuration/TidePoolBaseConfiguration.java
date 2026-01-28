@@ -21,9 +21,15 @@ public class TidePoolBaseConfiguration {
 
     @Bean
     @DependsOn("applicationContextHolder")
-    public TidePoolBeanPostProcessor tidePoolBeanPostProcessor(BootstrapConfigProperties properties) {
+    public TidePoolBeanPostProcessor oneThreadBeanPostProcessor(BootstrapConfigProperties properties) {
         return new TidePoolBeanPostProcessor(properties);
     }
+
+    @Bean
+    public NotifierDispatcher notifierDispatcher() {
+        return new NotifierDispatcher();
+    }
+
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     public ThreadPoolAlarmChecker threadPoolAlarmChecker(NotifierDispatcher notifierDispatcher) {

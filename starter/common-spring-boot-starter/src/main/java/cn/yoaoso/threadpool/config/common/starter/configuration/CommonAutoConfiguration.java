@@ -30,6 +30,7 @@ public class CommonAutoConfiguration {
         BootstrapConfigProperties bootstrapConfigProperties= Binder.get(environment)
                 .bind(BootstrapConfigProperties.PREFIX, Bindable.of(BootstrapConfigProperties.class))
                 .get();
+        BootstrapConfigProperties.setInstance(bootstrapConfigProperties);
         return bootstrapConfigProperties;
     }
 
