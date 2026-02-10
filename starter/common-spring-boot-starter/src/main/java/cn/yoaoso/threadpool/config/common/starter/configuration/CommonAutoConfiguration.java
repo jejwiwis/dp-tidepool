@@ -1,5 +1,7 @@
 package cn.yoaoso.threadpool.config.common.starter.configuration;
 
+import cn.yoaoso.threadpool.config.common.starter.refresher.DynamicThreadPoolRefreshListener;
+import cn.yoaoso.threadpool.core.monitor.service.NotifierDispatcher;
 import cn.yoaoso.threadpool.spring.base.configuration.TidePoolBaseConfiguration;
 import cn.yoaoso.threadpool.spring.base.enable.MarkerConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -32,6 +34,11 @@ public class CommonAutoConfiguration {
                 .get();
         BootstrapConfigProperties.setInstance(bootstrapConfigProperties);
         return bootstrapConfigProperties;
+    }
+
+    @Bean
+    public DynamicThreadPoolRefreshListener dynamicThreadPoolRefreshListener(NotifierDispatcher notifierDispatcher) {
+        return new DynamicThreadPoolRefreshListener(notifierDispatcher);
     }
 
 }

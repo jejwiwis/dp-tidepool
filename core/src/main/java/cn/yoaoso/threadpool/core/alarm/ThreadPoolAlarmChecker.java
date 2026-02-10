@@ -125,8 +125,8 @@ public class ThreadPoolAlarmChecker {
             return;
         }
 
-       TidePoolExecutor oneThreadExecutor = (TidePoolExecutor) executor;
-        long currentRejectCount = oneThreadExecutor.getRejectCount().get();
+       TidePoolExecutor tidePoolExecutor = (TidePoolExecutor) executor;
+        long currentRejectCount = tidePoolExecutor.getRejectCount().get();
         long lastRejectCount = lastRejectCountMap.getOrDefault(threadPoolId, 0L);
 
         // 首次初始化或拒绝次数增加时触发

@@ -61,10 +61,6 @@ public abstract class AbstractDynamicThreadPoolRefresher implements ApplicationR
 
         // 发布线程池配置变更事件，触发所有监听器执行线程池参数对比与刷新操作
         // 当前支持的监听器包括：
-        // - {@link com.nageoffer.onethread.config.common.starter.refresher.DynamicThreadPoolRefreshListener}
-        // - {@link com.nageoffer.onethread.web.starter.core.WebThreadPoolRefreshListener}
         ApplicationContextHolder.getInstance().publishEvent(new ThreadPoolConfigUpdateEvent(this, refresherProperties));
     }
-
-
 }
